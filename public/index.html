@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>mini-llm chat</title>
+    <style>
+      :root { color-scheme: light dark; }
+      * { box-sizing: border-box; }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      header { display: flex; align-items: baseline; gap: 0.75rem; }
+      h1 { font-size: 1.1rem; margin: 0; }
+      header small { opacity: 0.6; }
+      #log { flex: 1; display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem 0; }
+      .msg { padding: 0.6rem 0.85rem; border-radius: 0.7rem; white-space: pre-wrap; line-height: 1.45; max-width: 85%; }
+      .user { align-self: flex-end; background: #2563eb; color: #fff; }
+      .bot { align-self: flex-start; background: rgba(127, 127, 127, 0.16); }
+      form { display: flex; gap: 0.5rem; position: sticky; bottom: 0; padding: 0.5rem 0; background: Canvas; }
+      input, button { font: inherit; padding: 0.6rem 0.8rem; border-radius: 0.55rem; border: 1px solid rgba(127, 127, 127, 0.4); }
+      input { flex: 1; background: Canvas; color: CanvasText; }
+      button { border: 0; background: #2563eb; color: #fff; cursor: pointer; }
+      button.secondary { background: transparent; color: inherit; border: 1px solid rgba(127, 127, 127, 0.4); }
+      button:disabled { opacity: 0.5; cursor: default; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>mini-llm</h1>
+      <small id="model">local model</small>
+      <button id="reset" class="secondary" style="margin-left: auto">Reset</button>
+    </header>
+    <div id="log"></div>
+    <form id="form">
+      <input id="input" autocomplete="off" placeholder="Type a message…" autofocus />
+      <button id="send" type="submit">Send</button>
+    </form>
+
+    <script>
+      const log = document.getElementById("log");
+      const form = document.getElementById("form");
+      const input = document.getElementById("input");
+      const send = document.getElementById("send");
+      const reset = document.getElementById("reset");
+
+      fetch("/health")
+        .then((r) => r.json())
+        .then((h) => {
+          document.getElementById("model").textContent = h.model + " (" + h.dtype + ")";
+        })
+        .catch(() => {});
+
+      function addMsg(text, cls) {
+        const el = document.createElement("div");
+        el.className = "msg " + cls;
+        el.textContent = text;
+        log.appendChild(el);
+        el.scrollIntoView({ block: "end" });
+        return el;
+      }
+
+      reset.addEventListener("click", async () => {
+        await fetch("/api/reset", { method: "POST" });
+        log.replaceChildren();
+        input.focus();
+      });
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const message = input.value.trim();
+        if (!message) return;
+        input.value = "";
+        send.disabled = true;
+        addMsg(message, "user");
+        const bot = addMsg("", "bot");
+
+        try {
+          const res = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ message }),
+          });
+
+          const reader = res.body.getReader();
+          const decoder = new TextDecoder();
+          let buffer = "";
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, { stream: true });
+            const events = buffer.split("\n\n");
+            buffer = events.pop();
+            for (const event of events) {
+              const line = event.replace(/^data: /, "");
+              if (!line) continue;
+              const data = JSON.parse(line);
+              if (data.token) {
+                bot.textContent += data.token;
+                bot.scrollIntoView({ block: "end" });
+              }
+            }
+          }
+        } catch (err) {
+          bot.textContent = "[error] " + err.message;
+        } finally {
+          send.disabled = false;
+          input.focus();
+        }
+      });
+    </script>
+  </body>
+</html>
