@@ -17,16 +17,52 @@ const models = [
     expectedMemoryMb: { min: 600, max: 850 },
   },
   {
+    id: "onnx-community/LFM2-350M-ONNX",
+    released: "2025-07-10",
+    parameters: 350_000_000,
+    expectedMemoryMb: { min: 500, max: 750 },
+  },
+  {
+    id: "onnx-community/LFM2.5-350M-ONNX",
+    released: "2026-03-31",
+    parameters: 350_000_000,
+    expectedMemoryMb: { min: 500, max: 750 },
+  },
+  {
     id: "onnx-community/LFM2-700M-ONNX",
     released: "2025-07-10",
     parameters: 742_489_344,
     expectedMemoryMb: { min: 800, max: 1_100 },
   },
   {
+    id: "onnx-community/LFM2-1.2B-ONNX",
+    released: "2025-07-10",
+    parameters: 1_200_000_000,
+    expectedMemoryMb: { min: 1_200, max: 1_700 },
+  },
+  {
     id: "onnx-community/Qwen2.5-0.5B-Instruct",
     released: "2024-09-19",
     parameters: 494_000_000,
     expectedMemoryMb: { min: 1_050, max: 1_400 },
+  },
+  {
+    id: "onnx-community/Apertus-v1.1-0.5B-Instruct-ONNX",
+    released: "2026-05-29",
+    parameters: 564_000_000,
+    expectedMemoryMb: { min: 800, max: 1_150 },
+  },
+  {
+    id: "onnx-community/granite-4.0-350m-ONNX-web",
+    released: "2025-10-28",
+    parameters: 340_000_000,
+    expectedMemoryMb: { min: 800, max: 1_100 },
+  },
+  {
+    id: "onnx-community/MobileLLM-R1-360M-ONNX",
+    released: "2025-09-12",
+    parameters: 359_000_000,
+    expectedMemoryMb: { min: 900, max: 1_250 },
   },
   {
     id: "onnx-community/gemma-3-1b-it-ONNX",
@@ -46,12 +82,14 @@ const models = [
     parameters: 1_100_000_000,
     expectedMemoryMb: { min: 1_200, max: 1_600 },
   },
+  /* skip, this one fails with some template issues
   {
     id: "onnx-community/Qwen3-0.6B-Instruct-ONNX",
     released: "2025-04-29",
     parameters: 600_000_000,
     expectedMemoryMb: { min: 1_300, max: 1_750 },
   },
+  */
   {
     id: "onnx-community/deepseek-coder-1.3b-instruct-ONNX",
     released: "2023-11-02",
@@ -63,6 +101,12 @@ const models = [
     released: "2024-11-02",
     parameters: 1_700_000_000,
     expectedMemoryMb: { min: 1_750, max: 2_300 },
+  },
+  {
+    id: "onnx-community/MobileLLM-R1-950M-ONNX",
+    released: "2025-09-12",
+    parameters: 949_000_000,
+    expectedMemoryMb: { min: 1_700, max: 2_250 },
   },
   {
     id: "onnx-community/Llama-3.2-1B-Instruct-ONNX",
@@ -81,6 +125,30 @@ const models = [
     released: "2024-09-19",
     parameters: 1_540_000_000,
     expectedMemoryMb: { min: 2_200, max: 2_900 },
+  },
+  {
+    id: "onnx-community/Qwen2.5-Math-1.5B-Instruct",
+    released: "2024-09-19",
+    parameters: 1_540_000_000,
+    expectedMemoryMb: { min: 2_200, max: 2_900 },
+  },
+  {
+    id: "onnx-community/Falcon3-1B-Instruct",
+    released: "2024-12-17",
+    parameters: 1_700_000_000,
+    expectedMemoryMb: { min: 2_400, max: 2_950 },
+  },
+  {
+    id: "onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX",
+    released: "2025-01-20",
+    parameters: 1_500_000_000,
+    expectedMemoryMb: { min: 2_400, max: 2_950 },
+  },
+  {
+    id: "onnx-community/TinySwallow-1.5B-Instruct-ONNX",
+    released: "2025-01-30",
+    parameters: 1_540_000_000,
+    expectedMemoryMb: { min: 2_250, max: 2_950 },
   },
 ];
 
@@ -153,6 +221,12 @@ an ABAP Hello World prompt to ./abap-hello-world-results.md.`);
     return;
   }
 
+  if (typeof globalThis.gc !== "function") {
+    throw new Error(
+      "Garbage collection is unavailable; run Node.js with --expose-gc",
+    );
+  }
+
   console.error(
     `Running all ${models.length} built-in q4 models sequentially.`,
   );
@@ -197,6 +271,8 @@ an ABAP Hello World prompt to ./abap-hello-world-results.md.`);
           `Could not release ${model.id}: ${error?.message ?? error}`,
         );
       }
+      generator = undefined;
+      globalThis.gc();
       await saveReport(results);
     }
     console.error("");

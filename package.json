@@ -9,7 +9,7 @@
   },
   "scripts": {
     "pull-model": "node --env-file-if-exists=.env src/pull-model.js",
-    "abap-model-survey": "node src/abap-model-survey.js",
+    "abap-model-survey": "node --expose-gc src/abap-model-survey.js",
     "chat": "node --env-file-if-exists=.env src/chat.js",
     "serve": "node --env-file-if-exists=.env src/server.js",
     "start": "npm run chat"

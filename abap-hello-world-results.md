@@ -2,22 +2,23 @@
 
 - Prompt: Write a minimal Hello World program in ABAP. Return only the complete program.
 - Model precision: q4
+- Expected memory: estimated range for this short prompt and 256-token limit
 - Completed: 11/12
 
-| Model | Status |
-| --- | --- |
-| `HuggingFaceTB/SmolLM2-360M-Instruct` | Completed |
-| `onnx-community/LFM2-700M-ONNX` | Completed |
-| `onnx-community/Qwen2.5-0.5B-Instruct` | Completed |
-| `onnx-community/gemma-3-1b-it-ONNX` | Completed |
-| `onnx-community/Qwen2.5-Coder-0.5B-Instruct` | Completed |
-| `onnx-community/TinyLlama-1.1B-Chat-v1.0-ONNX` | Completed |
-| `onnx-community/Qwen3-0.6B-Instruct-ONNX` | Failed |
-| `onnx-community/deepseek-coder-1.3b-instruct-ONNX` | Completed |
-| `HuggingFaceTB/SmolLM2-1.7B-Instruct` | Completed |
-| `onnx-community/Llama-3.2-1B-Instruct-ONNX` | Completed |
-| `onnx-community/Qwen2.5-1.5B-Instruct` | Completed |
-| `onnx-community/Qwen2.5-Coder-1.5B-Instruct` | Completed |
+| Model | Released | Parameters | Expected memory | Status |
+| --- | --- | ---: | ---: | --- |
+| `HuggingFaceTB/SmolLM2-360M-Instruct` | 2024-11-02 | 360M | 600–850 MB | Completed |
+| `onnx-community/LFM2-700M-ONNX` | 2025-07-10 | 742.49M | 800–1,100 MB | Completed |
+| `onnx-community/Qwen2.5-0.5B-Instruct` | 2024-09-19 | 494M | 1,050–1,400 MB | Completed |
+| `onnx-community/gemma-3-1b-it-ONNX` | 2025-03-12 | 1B | 1,150–1,550 MB | Completed |
+| `onnx-community/Qwen2.5-Coder-0.5B-Instruct` | 2024-11-12 | 494M | 1,150–1,550 MB | Completed |
+| `onnx-community/TinyLlama-1.1B-Chat-v1.0-ONNX` | 2023-12-31 | 1.1B | 1,200–1,600 MB | Completed |
+| `onnx-community/Qwen3-0.6B-Instruct-ONNX` | 2025-04-29 | 600M | 1,300–1,750 MB | Failed |
+| `onnx-community/deepseek-coder-1.3b-instruct-ONNX` | 2023-11-02 | 1.3B | 1,400–1,850 MB | Completed |
+| `HuggingFaceTB/SmolLM2-1.7B-Instruct` | 2024-11-02 | 1.7B | 1,750–2,300 MB | Completed |
+| `onnx-community/Llama-3.2-1B-Instruct-ONNX` | 2024-09-25 | 1.23B | 2,100–2,750 MB | Completed |
+| `onnx-community/Qwen2.5-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | Completed |
+| `onnx-community/Qwen2.5-Coder-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | Completed |
 
 ## HuggingFaceTB/SmolLM2-360M-Instruct
 
