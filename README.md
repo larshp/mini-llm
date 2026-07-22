@@ -51,6 +51,19 @@ Endpoints:
 | `POST` | `/api/chat`   | Body `{ "message": "..." }` → streams tokens over SSE   |
 | `POST` | `/api/reset`  | Clears the server-side conversation                     |
 
+### Compare small models with an ABAP prompt
+
+Run the built-in small models, ask each for an ABAP Hello World program, and
+save their answers to `abap-hello-world-results.md`:
+
+```bash
+npm run abap-model-survey
+```
+
+Models run sequentially and are released after each answer. Downloads are
+cached in `./models`; failures are recorded without stopping the remaining
+models.
+
 Example with `curl` (server-sent events):
 
 ```bash
@@ -106,6 +119,7 @@ src/
   chat.js         # interactive terminal chat
   server.js       # HTTP API + web UI
   pull-model.js   # pre-download the model
+  abap-model-survey.js # compare small models with an ABAP prompt
 public/
   index.html      # web chat UI (served by server.js)
 ```
