@@ -2,23 +2,133 @@
 
 - Prompt: Write a minimal Hello World program in ABAP. Return only the complete program.
 - Model precision: q4
-- Expected memory: estimated range for this short prompt and 256-token limit
-- Completed: 11/12
+- Expected memory: estimated range for this short prompt and 512-token limit
+- Completed: 21/22
 
 | Model | Released | Parameters | Expected memory | Status |
 | --- | --- | ---: | ---: | --- |
+| `onnx-community/granite-4.0-350m-ONNX-web` | 2025-10-28 | 340M | 800–1,100 MB | Completed |
+| `onnx-community/LFM2-350M-ONNX` | 2025-07-10 | 350M | 500–750 MB | Completed |
+| `onnx-community/LFM2.5-350M-ONNX` | 2026-03-31 | 350M | 500–750 MB | Completed |
+| `onnx-community/MobileLLM-R1-360M-ONNX` | 2025-09-12 | 359M | 900–1,250 MB | Completed |
 | `HuggingFaceTB/SmolLM2-360M-Instruct` | 2024-11-02 | 360M | 600–850 MB | Completed |
-| `onnx-community/LFM2-700M-ONNX` | 2025-07-10 | 742.49M | 800–1,100 MB | Completed |
 | `onnx-community/Qwen2.5-0.5B-Instruct` | 2024-09-19 | 494M | 1,050–1,400 MB | Completed |
-| `onnx-community/gemma-3-1b-it-ONNX` | 2025-03-12 | 1B | 1,150–1,550 MB | Completed |
 | `onnx-community/Qwen2.5-Coder-0.5B-Instruct` | 2024-11-12 | 494M | 1,150–1,550 MB | Completed |
+| `onnx-community/Apertus-v1.1-0.5B-Instruct-ONNX` | 2026-05-29 | 564M | 800–1,150 MB | Completed |
+| `onnx-community/LFM2-700M-ONNX` | 2025-07-10 | 742.49M | 800–1,100 MB | Completed |
+| `onnx-community/MobileLLM-R1-950M-ONNX` | 2025-09-12 | 949M | 1,700–2,250 MB | Completed |
+| `onnx-community/gemma-3-1b-it-ONNX` | 2025-03-12 | 1B | 1,150–1,550 MB | Completed |
 | `onnx-community/TinyLlama-1.1B-Chat-v1.0-ONNX` | 2023-12-31 | 1.1B | 1,200–1,600 MB | Completed |
-| `onnx-community/Qwen3-0.6B-Instruct-ONNX` | 2025-04-29 | 600M | 1,300–1,750 MB | Failed |
-| `onnx-community/deepseek-coder-1.3b-instruct-ONNX` | 2023-11-02 | 1.3B | 1,400–1,850 MB | Completed |
-| `HuggingFaceTB/SmolLM2-1.7B-Instruct` | 2024-11-02 | 1.7B | 1,750–2,300 MB | Completed |
+| `onnx-community/LFM2-1.2B-ONNX` | 2025-07-10 | 1.2B | 1,200–1,700 MB | Completed |
 | `onnx-community/Llama-3.2-1B-Instruct-ONNX` | 2024-09-25 | 1.23B | 2,100–2,750 MB | Completed |
+| `onnx-community/deepseek-coder-1.3b-instruct-ONNX` | 2023-11-02 | 1.3B | 1,400–1,850 MB | Completed |
+| `onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX` | 2025-01-20 | 1.5B | 2,400–2,950 MB | Completed |
 | `onnx-community/Qwen2.5-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | Completed |
 | `onnx-community/Qwen2.5-Coder-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | Completed |
+| `onnx-community/Qwen2.5-Math-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | Failed |
+| `onnx-community/TinySwallow-1.5B-Instruct-ONNX` | 2025-01-30 | 1.54B | 2,250–2,950 MB | Completed |
+| `HuggingFaceTB/SmolLM2-1.7B-Instruct` | 2024-11-02 | 1.7B | 1,750–2,300 MB | Completed |
+| `onnx-community/Falcon3-1B-Instruct` | 2024-12-17 | 1.7B | 2,400–2,950 MB | Completed |
+
+## onnx-community/granite-4.0-350m-ONNX-web
+
+SUBC PROGRAM 'Hello World' FOR ALL
+IF ABAP_HWHELLOHELLO
+    ABAP_HWHELLOHELLO.
+    ABAP_HWHELLOHELLO.
+END IF.
+END SUBC.
+
+## onnx-community/LFM2-350M-ONNX
+
+```abap
+program HelloWorldABAP
+begin
+    ; Define variables
+    DECLARE
+        IDENTIFIED BY x
+        PRINT 'Hello, World!';
+    UNLIMIT
+
+    ; Create a console application
+    CREATE PROGRAM 'HelloWorldABAP' AS
+    ; Main loop
+    PRINT 'Starting main loop...';
+    DO UNLIMIT
+        PRINT 'Processing line: ';
+        ; Read input from user
+        LET x = (INPUT_PAR(1));
+
+        ; Check if input is not empty
+        IF NOT EXISTS (SELECT 1 FROM sys_Input) THEN
+            PRINT 'Error: No input received.';
+            CONTINUE;
+        END IF;
+
+        ; Process input
+        FOR I = 1 TO 1000;
+            PRINT 'Input: ';
+            SET x = (VALUES(x) <> '') TO 'Input ', i;
+            SET v = (VALUES(x) = v + 1);
+            PRINT 'Existing: ';
+            SET s = (VALUES(x) = s) TO 'Existing ', i;
+            IF s <> v THEN
+                PRINT 'New: ';
+                SET t = (VALUES(x) = s) TO 'New ', i;
+                PRINT 'Value: ';
+                SET w = (VALUES(x) = v + 10) TO 'Value ', i;
+                PRINT 'Changed: ';
+                SET h = (VALUES(x) = v - 5) TO 'Changed ', i;
+                PRINT 'Updated: ';
+                SET j = (VALUES(x) = v) TO 'Updated ', i;
+                PRINT 'New Value: ';
+                SET k = (VALUES(x) = v + w) TO 'New Value ', i;
+                PRINT 'New Value: ';
+                SET l = (VALUES(x) = v - h) TO 'New Value ', i;
+                PRINT 'Value: ';
+                SET m = (VALUES(x) = v + j) TO 'Value ', i;
+                PRINT 'Final Value: ';
+                SET n = (VALUES(x) = v + k) TO 'Final Value ', i;
+                PRINT 'Final Value: ';
+                PRINT 'Value: ';
+                SET o = (VALUES
+```
+
+## onnx-community/LFM2.5-350M-ONNX
+
+Hello World
+
+## onnx-community/MobileLLM-R1-360M-ONNX
+
+<|amend></a>
+
+---
+
+Note: This problem statement is not yet provided, but it's possible that this question might be related to writing a minimal Hello World function for an abap system.
+
+The user says "Write a minimal Hello World program in ABAP." So I need to write a Python-like program (or more accurately, a C++-like language) that returns the value 1 when called with arguments [1], which would return 1. But since the user mentioned returning 1 as the output of the program, perhaps they want a function that outputs 1 when given 1. However, in programming languages like Python or JavaScript, you can call such functions and get their values directly. In the context of the problem, maybe the task is to create a function that does something specific, like printing 1 on screen.
+
+But looking back at the note: "Return only the complete program" — so perhaps the actual code should be written as a program that prints 1 when run. The instruction says "program," which could mean a script file.
+
+Alternatively, if it's a function, then the code inside the function would do nothing. For example:
+
+function hello(1) {
+    print("Hello");
+}
+
+Then calling hello(1) would execute the loop and print once. If the argument is passed as a number, say 1000, then the loop runs 1000 times, printing each time. Then the final result depends on how many iterations there are. If we start from 1 and iterate up to N, where N=1000, then after 1000 iterations, the last iteration would print again? Or do we stop before reaching N?
+
+In programming terms, typically, loops terminate when the condition is met. So if the parameter is 1000, the loop will continue until it reaches 1, then go beyond. So if we have a variable initialized to 1, and we set it to 2,3,...,999,1000, then setting its initial value to 1 and iterating over it would generate numbers starting from 2 onwards. Wait, no. Let me think about the syntax.
+
+If the function is declared as:
+
+int main() { // initialize int to 1
+    while(int x = 1000)
+        cout <<x<<endl;
+    return; // exit without changing int
+}
+
+This would print 2,3,...,999,1000. Because the outermost loop starts at 1000 and goes down
 
 ## HuggingFaceTB/SmolLM2-360M-Instruct
 
@@ -71,14 +181,55 @@ data (name, age) as (
     "Dave Williams", 32
 );
 
-data (name,
+data (name, age) as (
+    "Mike Davis", 33
+);
 
-## onnx-community/LFM2-700M-ONNX
+data (name, age) as (
+    "Dave Williams", 34
+);
 
-```abap
-DO WHILE (NUMERIC(1,2) = 1).
-    PRINT 'Hello, World!';
-END DO
+data (name, age) as (
+    "Mike Davis", 35
+);
+
+data (name, age) as (
+    "Dave Williams", 36
+);
+
+data (name, age) as (
+    "Mike Davis", 37
+);
+
+data (name, age) as (
+    "Dave Williams", 38
+);
+
+data (name, age) as (
+    "Mike Davis", 39
+);
+
+data (name, age) as (
+    "Dave Williams", 40
+);
+
+data (name, age) as (
+    "Mike Davis", 41
+);
+
+data (name, age) as (
+    "Dave Williams", 42
+);
+
+data (name, age) as (
+    "Mike Davis", 43
+);
+
+data (name, age) as (
+    "Dave Williams", 44
+);
+
+data (name, age) as (
 ```
 
 ## onnx-community/Qwen2.5-0.5B-Instruct
@@ -100,6 +251,142 @@ END PROGRAM HelloWorld
 ```
 
 This program defines a simple system library function `HelloWorld` that prints "Hello, World!" to the console. The `READ TABLE Users INTO NAME, MESSAGE AS MESSAGE` statement reads the values from the `Users` table into variables `NAME` and `MESSAGE`, which are then printed to the console.
+
+## onnx-community/Qwen2.5-Coder-0.5B-Instruct
+
+```abap
+program hello_world.
+  write: 'Hello, World!'.
+end program hello_world.
+```
+
+## onnx-community/Apertus-v1.1-0.5B-Instruct-ONNX
+
+```abap
+PROGRAMMER'S COMMON
+  PRIVATE FUNCTION
+  (
+    OUT: STRING := "Hello, World!"
+  ) PROCEDURE,
+  (
+    IN: STRING := "Hello, World!"
+  ) FUNC,
+  (
+    IN: ARRAY OF CHARS := "abcdefghijkljklmno"
+  ) ARRAY OF CHARS,
+  (
+    OUT: STRING := ""
+  ) TARGET
+  (
+    IN: ARRAY OF CHARS := "abcdefghijkljklmno"
+  ) ARRAY OF CHARS,
+  (
+    OUT: STRING := ""
+  ) TARGET
+  (
+    IN: STRING := "Hello, World!"
+  ) STRING,
+  (
+    IN: ARRAY OF CHARS := "abcdefghijklmno"
+  ) ARRAY OF CHARS,
+  (
+    OUT: STRING := ""
+  ) STRING,
+  (
+    IN: STRING := "Hello, World!"
+  ) STRING,
+  (
+    IN: ARRAY OF CHARS := "abcdefghijklmno"
+  ) ARRAY OF CHARS,
+  (
+    OUT: STRING := ""
+  ) STRING,
+  (
+    IN: STRING := "Hello, World!"
+  ) STRING,
+  (
+    IN: ARRAY OF CHARS := "abcdefghijklmno"
+  ) ARRAY OF CHARS,
+  (
+    OUT: STRING := ""
+  ) STRING,
+  (
+    IN: STRING := "Hello, World!"
+  ) STRING,
+  (
+    IN: ARRAY OF CHARS := "abcdefghijklmno"
+  ) ARRAY OF CHARS,
+  (
+    OUT: STRING := ""
+  ) STRING,
+  (
+    IN: STRING := "Hello, World!"
+  ) STRING,
+  (
+    IN: ARRAY OF CHARS := "abcdefghijklmno"
+  ) ARRAY OF CHARS,
+  (
+    OUT: STRING := ""
+  ) STRING,
+  (
+    IN: STRING := "Hello, World!"
+  ) STRING,
+  (
+    IN: ARRAY OF CHARS := "abcdefghijklmno"
+  ) ARRAY OF CHARS,
+  (
+    OUT: STRING := ""
+  ) STRING,
+  (
+    IN: STRING := "Hello, World!"
+  ) STRING,
+  (
+    IN: ARRAY OF CHARS := "abcdefghijklmno"
+  ) AR
+```
+
+## onnx-community/LFM2-700M-ONNX
+
+```abap
+DO WHILE (NUMERIC(1,2) = 1).
+    PRINT 'Hello, World!';
+END DO
+```
+
+## onnx-community/MobileLLM-R1-950M-ONNX
+
+<think>
+Okay, I need to write a minimal Hello World program in ABAP. Let me think about what ABAP is like. ABAP stands for Application Program Language, which is used in some older systems like IBM's mainframe environments. The key points here are that it's very simple compared to modern languages.
+
+In ABAP, the structure of a program starts with a header line. Then there's the code section where the actual logic goes. So the basic outline would be:
+
+- A header line starting with "ABAP" followed by a newline.
+- Then the code section, which includes the "PROG" keyword at the beginning of each line, indicating the start of the program.
+
+The simplest way to output "Hello World" would involve writing lines that print this message. In ABAP, you can use the PRINT statement or the SELECT statement to display text. But since we want the minimal version, maybe using the PRINT statement directly.
+
+Wait, but how does the syntax work? For example, the first line should be the header: "ABAP". Then the code part. Each line in the code section starts with "PROG", then the command (like PRINT), and ends with a newline.
+
+So putting it all together:
+
+Line 1: ABAP
+Line 2: PROG
+Line 3: PRINT 'Hello World'
+Line 4: END
+
+But wait, the problem says "return only the complete program." So perhaps the entire code needs to be written as one block. Also, the code must end with END.
+
+Let me check if there's any specific rules for ABAP. From what I remember, ABAP uses a very limited set of commands. The headers include the PROGRAM keyword, which is placed on the same line as the header. Wait, no—the header is on its own line. Then the code follows.
+
+Another thing: the code section doesn't have any comments except those within the lines. So the code would look like:
+
+PROGRAM:
+  ABAP
+  SELECT
+    PRINT 'Hello World' $$
+  END
+
+Wait, but the header is just "ABAP" on a separate line. Then the code starts with "SELECT" because in ABAP, the default selection method is SELECT. Because the header is on the same line as the header keyword, but according to ABAP documentation, the header is on a separate line. Hmm, maybe not. Let me recall: the standard ABAP header has the program name on the same line. Or is
 
 ## onnx-community/gemma-3-1b-it-ONNX
 
@@ -133,15 +420,14 @@ This program defines a simple system library function `HelloWorld` that prints "
 * **`lobs`**: Specifies the labels that will be populated within the subroutine.
 * **`message string`**:  Defines a label named `message` which will hold the string "Hello, World!".
 * **`report`**:  This label is used to display the contents of the `message` label.
-* **`class ... end.`**:  This defines a class (though it's a simple one) to encapsulate the logic
+* **`class ... end.`**:  This defines a class (though it's a simple one) to encapsulate the logic.  It's a common pattern in ABAP.
+* **`label ... end.`**:  These are labels used to display text.
+* **`"Displaying the message"`**:  This is a descriptive label used to show the output.
+* **`lobs`**: Specifies the labels that will be populated within the label.
+* **`"End of the message display"`**:  This is a label used to indicate the end of the message display.
+* **`"End of the message display"`**:  This is a label used to indicate the end of the message display.
 
-## onnx-community/Qwen2.5-Coder-0.5B-Instruct
-
-```abap
-program hello_world.
-  write: 'Hello, World!'.
-end program hello_world.
-```
+This code demonstrates a basic ABAP subroutine that displays a message. It's a fundamental example demonstrating how to structure ABAP code.
 
 ## onnx-community/TinyLlama-1.1B-Chat-v1.0-ONNX
 
@@ -155,9 +441,30 @@ ENDPROCEDURE.
 
 This program simply sends a message to the standard output. It doesn't do any other useful things.
 
-## onnx-community/Qwen3-0.6B-Instruct-ONNX
+## onnx-community/LFM2-1.2B-ONNX
 
-Generation failed: `Cannot use apply_chat_template() because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating`
+```abap
+DATA;
+PROGRAM HelloWorld;
+    WRITE 'Hello, World!';
+END;
+GO
+```
+
+## onnx-community/Llama-3.2-1B-Instruct-ONNX
+
+```abap
+PROGRAM zHelloWorld.
+
+  " Define the main function with no parameters.
+  " This is the entry point of the program.
+  " The program will print 'Hello, World!' to the screen.
+
+  " Use the MESSAGE function to display a message.
+  MESSAGE ID 'ZHELLOWORLD' TYPE 'U' DISPLAY 'Hello, World!'.
+
+ENDProgram.
+```
 
 ## onnx-community/deepseek-coder-1.3b-instruct-ONNX
 
@@ -176,28 +483,35 @@ START-OF-SELECTION.
   WRITE: / 'Message number ', LENGTH(lt_text) , '-', lt_text .
 END-OF-SELECTION.
 ```
-This code will print out all routines with name 'Z_HELLO_WORLD'. The routine should return a table of text messages which contain descriptions for each message. Please note that this solution assumes you have access to system tables such as `SY
+This code will print out all routines with name 'Z_HELLO_WORLD'. The routine should return a table of text messages which contain descriptions for each message. Please note that this solution assumes you have access to system tables such as `SYSTEXT-TEXT` and `TXT`. If not, please adjust accordingly. Also, it does not handle errors or exceptions properly. In real scenarios, error handling would be necessary.
 
-## HuggingFaceTB/SmolLM2-1.7B-Instruct
+## onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX
 
-CLASS-EXTENSIBILITY HELLO-WORLD
-METHOD-BYTES
-01 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+<think>
+Okay, I need to write a minimal Hello World program in ABAP. Let me think about what that entails. 
 
-## onnx-community/Llama-3.2-1B-Instruct-ONNX
+First, I should consider the structure of a typical ABAP program. It usually starts with a data declaration for the first record. Since this is a simple program, I don't need any complex data types.
+
+I'll start by declaring a new record. The name can be anything, but "record1" seems straightforward. Then, I'll set the ID field to 0. IDs are good because they're unique across records.
+
+Next, I need to output the ID. In ABAP, you can use the echo command to print messages. So, I'll include echo 'Hello World' followed by a newline using echo ' '.
+
+I should also check if there's any other necessary fields. Since this is minimal, no additional fields are needed beyond the ID. 
+
+I should make sure the program is self-contained without relying on external libraries or modules. Just using the echo command should suffice.
+
+Putting it all together, the program declares a record, sets its ID, and outputs it. This should work as a Hello World example.
+</think>
+
+Here's a minimal ABAP program that prints "Hello World" using the echo command:
 
 ```abap
-PROGRAM zHelloWorld.
-
-  " Define the main function with no parameters.
-  " This is the entry point of the program.
-  " The program will print 'Hello, World!' to the screen.
-
-  " Use the MESSAGE function to display a message.
-  MESSAGE ID 'ZHELLOWORLD' TYPE 'U' DISPLAY 'Hello, World!'.
-
-ENDProgram.
+declare record1 as record
+set record1.ID = 0
+echo 'Hello World'
 ```
+
+This program declares a new record, sets its ID to 0, and prints "Hello World" using the echo command.
 
 ## onnx-community/Qwen2.5-1.5B-Instruct
 
@@ -217,3 +531,37 @@ DATA: lv_message TYPE string VALUE 'Hello, World!'.
 MESSAGE lv_message TYPE sy-msgtext.
 ```
 This program declares a variable `lv_message` of type string and assigns it the value 'Hello, World!', then displays this message using the `MESSAGE` statement with the system message type `sy-msgtext`.
+
+## onnx-community/Qwen2.5-Math-1.5B-Instruct
+
+Generation failed: `terminated`
+
+## onnx-community/TinySwallow-1.5B-Instruct-ONNX
+
+```ABAP
+REPORT ZHELLOWORLD.
+
+DATA: LS_HELLO_W ORG-STRING VALUE SY-LANG.
+LS_HELLO_W = SY-MSGSTR( 'HELLO' ).
+WRITE: (LS_HELLO_W).
+```
+
+**Explanation:**
+
+* **REPORT ZHELLOWORLD:** This line declares a report named "ZHELLOWORLD".
+* **DATA:** This section is used to declare data objects.
+    * **LS_HELLO_W ORG-STRING VALUE SY-LANG:** This variable is declared as an organization string (`ORG-STRING`) and initialized with the current language value (`SY-LANG`).
+    * **WRITE: (LS_HELLO_W):** This statement writes the content of `LS_HELLO_W` to the console, which will display the message "HELLO" in the current language.
+* **WRITE: (LS_HELLO_W):** This statement simply prints the value of `LS_HELLO_W`, which contains the message "HELLO".
+
+This program demonstrates how to create a simple "Hello World" program in ABAP. It uses the `WRITE` statement to print the message, which is automatically translated into the user's language by the system.
+
+## HuggingFaceTB/SmolLM2-1.7B-Instruct
+
+CLASS-EXTENSIBILITY HELLO-WORLD
+METHOD-BYTES
+01 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+## onnx-community/Falcon3-1B-Instruct
+
+```ABAPĊ// Minimal Hello World Program in ABAPĊĊDATA:Ċ    str_name := "Hello, World!";Ċ    greeting := "Hello, " + str_name + "!";ĊĊPRINT:Ċ    greeting;Ċ```
