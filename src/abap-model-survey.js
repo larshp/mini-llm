@@ -226,6 +226,12 @@ const models = [
     parameters: 3_800_000_000,
     expectedMemoryMb: { min: 3_500, max: 4_700 },
   },
+  {
+    id: "onnx-community/Qwen3-4B-Instruct-2507-ONNX",
+    released: "2025-08-05",
+    parameters: 4_022_468_096,
+    expectedMemoryMb: { min: 4_800, max: 5_900 },
+  },
 ];
 
 const outputPath = path.join(projectRoot, "abap-hello-world-results.md");

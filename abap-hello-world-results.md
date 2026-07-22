@@ -3,40 +3,39 @@
 - Prompt: Write a minimal Hello World program in ABAP. Return only the complete program.
 - Model precision: q4
 - Expected memory: estimated range for this short prompt and 512-token limit
-- Completed: 28/30
+- Completed: 29/29
 
 | Model | Released | Parameters | Expected memory | Generation runtime | Status |
 | --- | --- | ---: | ---: | ---: | --- |
 | `onnx-community/granite-4.0-350m-ONNX-web` | 2025-10-28 | 340M | 800–1,100 MB | 2 s | Completed |
-| `onnx-community/LFM2-350M-ONNX` | 2025-07-10 | 350M | 500–750 MB | 18 s | Completed |
+| `onnx-community/LFM2-350M-ONNX` | 2025-07-10 | 350M | 500–750 MB | 17 s | Completed |
 | `onnx-community/LFM2.5-350M-ONNX` | 2026-03-31 | 350M | 500–750 MB | 1 s | Completed |
-| `onnx-community/MobileLLM-R1-360M-ONNX` | 2025-09-12 | 359M | 900–1,250 MB | 22 s | Completed |
-| `HuggingFaceTB/SmolLM2-360M-Instruct` | 2024-11-02 | 360M | 600–850 MB | 28 s | Completed |
+| `onnx-community/MobileLLM-R1-360M-ONNX` | 2025-09-12 | 359M | 900–1,250 MB | 18 s | Completed |
+| `HuggingFaceTB/SmolLM2-360M-Instruct` | 2024-11-02 | 360M | 600–850 MB | 27 s | Completed |
 | `onnx-community/Qwen2.5-0.5B-Instruct` | 2024-09-19 | 494M | 1,050–1,400 MB | 9 s | Completed |
 | `onnx-community/Qwen2.5-Coder-0.5B-Instruct` | 2024-11-12 | 494M | 1,150–1,550 MB | 2 s | Completed |
-| `onnx-community/Apertus-v1.1-0.5B-Instruct-ONNX` | 2026-05-29 | 564M | 800–1,150 MB | 31 s | Completed |
+| `onnx-community/Apertus-v1.1-0.5B-Instruct-ONNX` | 2026-05-29 | 564M | 800–1,150 MB | 29 s | Completed |
 | `onnx-community/LFM2-700M-ONNX` | 2025-07-10 | 742M | 800–1,100 MB | 4 s | Completed |
-| `onnx-community/MobileLLM-R1-950M-ONNX` | 2025-09-12 | 949M | 1,700–2,250 MB | 49 s | Completed |
-| `onnx-community/gemma-3-1b-it-ONNX` | 2025-03-12 | 1B | 1,150–1,550 MB | 62 s | Completed |
+| `onnx-community/MobileLLM-R1-950M-ONNX` | 2025-09-12 | 949M | 1,700–2,250 MB | 42 s | Completed |
+| `onnx-community/gemma-3-1b-it-ONNX` | 2025-03-12 | 1B | 1,150–1,550 MB | 57 s | Completed |
 | `onnx-community/TinyLlama-1.1B-Chat-v1.0-ONNX` | 2023-12-31 | 1.1B | 1,200–1,600 MB | 10 s | Completed |
-| `onnx-community/LFM2-1.2B-ONNX` | 2025-07-10 | 1.2B | 1,200–1,700 MB | 5 s | Completed |
-| `onnx-community/Llama-3.2-1B-Instruct-ONNX` | 2024-09-25 | 1.23B | 2,100–2,750 MB | 10 s | Completed |
-| `onnx-community/deepseek-coder-1.3b-instruct-ONNX` | 2023-11-02 | 1.3B | 1,400–1,850 MB | 42 s | Completed |
+| `onnx-community/LFM2-1.2B-ONNX` | 2025-07-10 | 1.2B | 1,200–1,700 MB | 4 s | Completed |
+| `onnx-community/Llama-3.2-1B-Instruct-ONNX` | 2024-09-25 | 1.23B | 2,100–2,750 MB | 9 s | Completed |
+| `onnx-community/deepseek-coder-1.3b-instruct-ONNX` | 2023-11-02 | 1.3B | 1,400–1,850 MB | 39 s | Completed |
 | `onnx-community/granite-4.0-1b-ONNX-web` | 2025-10-28 | 1.5B | 2,400–3,200 MB | 2 s | Completed |
-| `onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX` | 2025-01-20 | 1.5B | 2,400–2,950 MB | 48 s | Completed |
+| `onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX` | 2025-01-20 | 1.5B | 2,400–2,950 MB | 50 s | Completed |
 | `onnx-community/Qwen2.5-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | 17 s | Completed |
 | `onnx-community/Qwen2.5-Coder-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | 11 s | Completed |
-| `onnx-community/Qwen2.5-Math-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | — | Failed |
-| `onnx-community/TinySwallow-1.5B-Instruct-ONNX` | 2025-01-30 | 1.54B | 2,250–2,950 MB | 113 s | Completed |
-| `HuggingFaceTB/SmolLM2-1.7B-Instruct` | 2024-11-02 | 1.7B | 1,750–2,300 MB | 106 s | Completed |
+| `onnx-community/TinySwallow-1.5B-Instruct-ONNX` | 2025-01-30 | 1.54B | 2,250–2,950 MB | 49 s | Completed |
+| `HuggingFaceTB/SmolLM2-1.7B-Instruct` | 2024-11-02 | 1.7B | 1,750–2,300 MB | 98 s | Completed |
 | `onnx-community/Falcon3-1B-Instruct` | 2024-12-17 | 1.7B | 2,400–2,950 MB | 12 s | Completed |
 | `onnx-community/Bonsai-1.7B-ONNX` | 2026-03 | 1.7B | 1,600–2,300 MB | 7 s | Completed |
-| `onnx-community/Qwen3-1.7B-ONNX` | 2025-04-29 | 1.7B | 2,700–3,600 MB | 13 s | Completed |
-| `onnx-community/ZR1-1.5B-ONNX` | 2025-04-07 | 1.78B | 2,500–3,200 MB | — | Failed |
-| `HuggingFaceTB/SmolLM3-3B-ONNX` | 2025-07-08 | 3B | 3,500–4,500 MB | 241 s | Completed |
+| `onnx-community/Qwen3-1.7B-ONNX` | 2025-04-29 | 1.7B | 2,700–3,600 MB | 10 s | Completed |
+| `HuggingFaceTB/SmolLM3-3B-ONNX` | 2025-07-08 | 3B | 3,500–4,500 MB | 139 s | Completed |
 | `onnx-community/Qwen2.5-Coder-3B-Instruct` | 2024-11-12 | 3.09B | 3,900–4,900 MB | 6 s | Completed |
-| `onnx-community/Phi-3-mini-4k-instruct-ONNX` | 2024-06 | 3.8B | 3,400–4,500 MB | 17 s | Completed |
-| `onnx-community/Phi-4-mini-instruct-ONNX` | 2025-02 | 3.8B | 3,500–4,700 MB | 43 s | Completed |
+| `onnx-community/Phi-3-mini-4k-instruct-ONNX` | 2024-06 | 3.8B | 3,400–4,500 MB | 13 s | Completed |
+| `onnx-community/Phi-4-mini-instruct-ONNX` | 2025-02 | 3.8B | 3,500–4,700 MB | 27 s | Completed |
+| `onnx-community/Qwen3-4B-Instruct-2507-ONNX` | 2025-08-05 | 4.02B | 4,800–5,900 MB | 8 s | Completed |
 
 ## onnx-community/granite-4.0-350m-ONNX-web
 
@@ -546,10 +545,6 @@ MESSAGE lv_message TYPE sy-msgtext.
 ```
 This program declares a variable `lv_message` of type string and assigns it the value 'Hello, World!', then displays this message using the `MESSAGE` statement with the system message type `sy-msgtext`.
 
-## onnx-community/Qwen2.5-Math-1.5B-Instruct
-
-Generation failed: `terminated`
-
 ## onnx-community/TinySwallow-1.5B-Instruct-ONNX
 
 ```ABAP
@@ -602,10 +597,6 @@ lv_message = 'Hello World!'.
 
 WRITE lv_message.
 ```
-
-## onnx-community/ZR1-1.5B-ONNX
-
-Generation failed: `terminated`
 
 ## HuggingFaceTB/SmolLM3-3B-ONNX
 
@@ -684,3 +675,11 @@ END-OF-SEQUENCE.
 ```
 
 Save this as `hello_world.abap` and execute it to see "Hello, World!" printed on the screen.
+
+## onnx-community/Qwen3-4B-Instruct-2507-ONNX
+
+```abap
+PROGRAM hello_world.
+  WRITE: 'Hello World'.
+ENDPROGRAM.
+```
