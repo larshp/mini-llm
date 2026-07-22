@@ -3,32 +3,40 @@
 - Prompt: Write a minimal Hello World program in ABAP. Return only the complete program.
 - Model precision: q4
 - Expected memory: estimated range for this short prompt and 512-token limit
-- Completed: 21/22
+- Completed: 28/30
 
-| Model | Released | Parameters | Expected memory | Status |
-| --- | --- | ---: | ---: | --- |
-| `onnx-community/granite-4.0-350m-ONNX-web` | 2025-10-28 | 340M | 800–1,100 MB | Completed |
-| `onnx-community/LFM2-350M-ONNX` | 2025-07-10 | 350M | 500–750 MB | Completed |
-| `onnx-community/LFM2.5-350M-ONNX` | 2026-03-31 | 350M | 500–750 MB | Completed |
-| `onnx-community/MobileLLM-R1-360M-ONNX` | 2025-09-12 | 359M | 900–1,250 MB | Completed |
-| `HuggingFaceTB/SmolLM2-360M-Instruct` | 2024-11-02 | 360M | 600–850 MB | Completed |
-| `onnx-community/Qwen2.5-0.5B-Instruct` | 2024-09-19 | 494M | 1,050–1,400 MB | Completed |
-| `onnx-community/Qwen2.5-Coder-0.5B-Instruct` | 2024-11-12 | 494M | 1,150–1,550 MB | Completed |
-| `onnx-community/Apertus-v1.1-0.5B-Instruct-ONNX` | 2026-05-29 | 564M | 800–1,150 MB | Completed |
-| `onnx-community/LFM2-700M-ONNX` | 2025-07-10 | 742.49M | 800–1,100 MB | Completed |
-| `onnx-community/MobileLLM-R1-950M-ONNX` | 2025-09-12 | 949M | 1,700–2,250 MB | Completed |
-| `onnx-community/gemma-3-1b-it-ONNX` | 2025-03-12 | 1B | 1,150–1,550 MB | Completed |
-| `onnx-community/TinyLlama-1.1B-Chat-v1.0-ONNX` | 2023-12-31 | 1.1B | 1,200–1,600 MB | Completed |
-| `onnx-community/LFM2-1.2B-ONNX` | 2025-07-10 | 1.2B | 1,200–1,700 MB | Completed |
-| `onnx-community/Llama-3.2-1B-Instruct-ONNX` | 2024-09-25 | 1.23B | 2,100–2,750 MB | Completed |
-| `onnx-community/deepseek-coder-1.3b-instruct-ONNX` | 2023-11-02 | 1.3B | 1,400–1,850 MB | Completed |
-| `onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX` | 2025-01-20 | 1.5B | 2,400–2,950 MB | Completed |
-| `onnx-community/Qwen2.5-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | Completed |
-| `onnx-community/Qwen2.5-Coder-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | Completed |
-| `onnx-community/Qwen2.5-Math-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | Failed |
-| `onnx-community/TinySwallow-1.5B-Instruct-ONNX` | 2025-01-30 | 1.54B | 2,250–2,950 MB | Completed |
-| `HuggingFaceTB/SmolLM2-1.7B-Instruct` | 2024-11-02 | 1.7B | 1,750–2,300 MB | Completed |
-| `onnx-community/Falcon3-1B-Instruct` | 2024-12-17 | 1.7B | 2,400–2,950 MB | Completed |
+| Model | Released | Parameters | Expected memory | Generation runtime | Status |
+| --- | --- | ---: | ---: | ---: | --- |
+| `onnx-community/granite-4.0-350m-ONNX-web` | 2025-10-28 | 340M | 800–1,100 MB | 2 s | Completed |
+| `onnx-community/LFM2-350M-ONNX` | 2025-07-10 | 350M | 500–750 MB | 18 s | Completed |
+| `onnx-community/LFM2.5-350M-ONNX` | 2026-03-31 | 350M | 500–750 MB | 1 s | Completed |
+| `onnx-community/MobileLLM-R1-360M-ONNX` | 2025-09-12 | 359M | 900–1,250 MB | 22 s | Completed |
+| `HuggingFaceTB/SmolLM2-360M-Instruct` | 2024-11-02 | 360M | 600–850 MB | 28 s | Completed |
+| `onnx-community/Qwen2.5-0.5B-Instruct` | 2024-09-19 | 494M | 1,050–1,400 MB | 9 s | Completed |
+| `onnx-community/Qwen2.5-Coder-0.5B-Instruct` | 2024-11-12 | 494M | 1,150–1,550 MB | 2 s | Completed |
+| `onnx-community/Apertus-v1.1-0.5B-Instruct-ONNX` | 2026-05-29 | 564M | 800–1,150 MB | 31 s | Completed |
+| `onnx-community/LFM2-700M-ONNX` | 2025-07-10 | 742M | 800–1,100 MB | 4 s | Completed |
+| `onnx-community/MobileLLM-R1-950M-ONNX` | 2025-09-12 | 949M | 1,700–2,250 MB | 49 s | Completed |
+| `onnx-community/gemma-3-1b-it-ONNX` | 2025-03-12 | 1B | 1,150–1,550 MB | 62 s | Completed |
+| `onnx-community/TinyLlama-1.1B-Chat-v1.0-ONNX` | 2023-12-31 | 1.1B | 1,200–1,600 MB | 10 s | Completed |
+| `onnx-community/LFM2-1.2B-ONNX` | 2025-07-10 | 1.2B | 1,200–1,700 MB | 5 s | Completed |
+| `onnx-community/Llama-3.2-1B-Instruct-ONNX` | 2024-09-25 | 1.23B | 2,100–2,750 MB | 10 s | Completed |
+| `onnx-community/deepseek-coder-1.3b-instruct-ONNX` | 2023-11-02 | 1.3B | 1,400–1,850 MB | 42 s | Completed |
+| `onnx-community/granite-4.0-1b-ONNX-web` | 2025-10-28 | 1.5B | 2,400–3,200 MB | 2 s | Completed |
+| `onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX` | 2025-01-20 | 1.5B | 2,400–2,950 MB | 48 s | Completed |
+| `onnx-community/Qwen2.5-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | 17 s | Completed |
+| `onnx-community/Qwen2.5-Coder-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | 11 s | Completed |
+| `onnx-community/Qwen2.5-Math-1.5B-Instruct` | 2024-09-19 | 1.54B | 2,200–2,900 MB | — | Failed |
+| `onnx-community/TinySwallow-1.5B-Instruct-ONNX` | 2025-01-30 | 1.54B | 2,250–2,950 MB | 113 s | Completed |
+| `HuggingFaceTB/SmolLM2-1.7B-Instruct` | 2024-11-02 | 1.7B | 1,750–2,300 MB | 106 s | Completed |
+| `onnx-community/Falcon3-1B-Instruct` | 2024-12-17 | 1.7B | 2,400–2,950 MB | 12 s | Completed |
+| `onnx-community/Bonsai-1.7B-ONNX` | 2026-03 | 1.7B | 1,600–2,300 MB | 7 s | Completed |
+| `onnx-community/Qwen3-1.7B-ONNX` | 2025-04-29 | 1.7B | 2,700–3,600 MB | 13 s | Completed |
+| `onnx-community/ZR1-1.5B-ONNX` | 2025-04-07 | 1.78B | 2,500–3,200 MB | — | Failed |
+| `HuggingFaceTB/SmolLM3-3B-ONNX` | 2025-07-08 | 3B | 3,500–4,500 MB | 241 s | Completed |
+| `onnx-community/Qwen2.5-Coder-3B-Instruct` | 2024-11-12 | 3.09B | 3,900–4,900 MB | 6 s | Completed |
+| `onnx-community/Phi-3-mini-4k-instruct-ONNX` | 2024-06 | 3.8B | 3,400–4,500 MB | 17 s | Completed |
+| `onnx-community/Phi-4-mini-instruct-ONNX` | 2025-02 | 3.8B | 3,500–4,700 MB | 43 s | Completed |
 
 ## onnx-community/granite-4.0-350m-ONNX-web
 
@@ -485,6 +493,12 @@ END-OF-SELECTION.
 ```
 This code will print out all routines with name 'Z_HELLO_WORLD'. The routine should return a table of text messages which contain descriptions for each message. Please note that this solution assumes you have access to system tables such as `SYSTEXT-TEXT` and `TXT`. If not, please adjust accordingly. Also, it does not handle errors or exceptions properly. In real scenarios, error handling would be necessary.
 
+## onnx-community/granite-4.0-1b-ONNX-web
+
+REPORT hello_world.
+
+START NEXT LINE.
+
 ## onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX
 
 <think>
@@ -565,3 +579,108 @@ METHOD-BYTES
 ## onnx-community/Falcon3-1B-Instruct
 
 ```ABAPĊ// Minimal Hello World Program in ABAPĊĊDATA:Ċ    str_name := "Hello, World!";Ċ    greeting := "Hello, " + str_name + "!";ĊĊPRINT:Ċ    greeting;Ċ```
+
+## onnx-community/Bonsai-1.7B-ONNX
+
+```abap
+program hello_world is
+    display "Hello, World!\n";
+end program;
+```
+
+## onnx-community/Qwen3-1.7B-ONNX
+
+<think>
+</think>
+
+```abap
+REPORT LCOSS_HELLOWORLD.
+
+DATA: lv_message TYPE c16.
+
+lv_message = 'Hello World!'.
+
+WRITE lv_message.
+```
+
+## onnx-community/ZR1-1.5B-ONNX
+
+Generation failed: `terminated`
+
+## HuggingFaceTB/SmolLM3-3B-ONNX
+
+<think>
+Okay, I need to write a minimal "Hello World" program in ABAP. Let me recall how ABAP works.
+
+First, the structure of an ABAP program typically includes the class definition, the main method, and any necessary include files. Since it's a simple program, maybe just a single class with a main method.
+
+The main method is usually named "main". Inside it, we have the standard parameters like "this", "super", etc., but since there's no inheritance here, maybe just "this".
+
+Inside the main method, we'll print out "Hello World!" using the ABAP Console's output function. The standard way to do this is using the "out" method from the "Console" class.
+
+Wait, the ABAP standard says that the main method should be static. So the signature would be something like:
+
+public static void main(String[] args) {... }
+
+But in Java-like syntax, the main method is declared as public static void main(String[] args).
+
+So putting it all together, the code would look like:
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
+
+But wait, the ABAP standard requires that the class name matches the package name. If there's no package, then the class name can be used directly. But if we're not in a package, then the class name should be in camelCase? Or maybe not. Wait, the ABAP standard allows for classes without a package, so the class name can be in PascalCase or camelCase. However, the main method is static, so the class doesn't need to be in a package.
+
+But in the code above, the class is named HelloWorld, which is PascalCase. That's acceptable.
+
+Now, let me check if there are any other requirements. For example, the ABAP standard requires that the class has a constructor, but in this case, the class doesn't have one because it's a static method. So that's okay.
+
+Another thing to consider: the ABAP standard requires that the class has a default constructor, but since the class is static, the default constructor is implicit. So that's fine.
+
+Putting it all together, the code should be:
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
+
+Wait, but the ABAP standard also requires that the class has a default constructor. However, since the class is static, the default constructor is automatically
+
+## onnx-community/Qwen2.5-Coder-3B-Instruct
+
+```abap
+REPORT z_hello_world.
+
+WRITE 'Hello, World!'.
+```
+
+## onnx-community/Phi-3-mini-4k-instruct-ONNX
+
+```abap
+
+REPORT z_hello_world.
+
+
+STARTFORMULA.
+
+WRITE 'Hello, world!'.
+
+ENDFORMULA.
+
+```
+
+## onnx-community/Phi-4-mini-instruct-ONNX
+
+```abap
+REPORT zhello_world.
+
+START-OF-SEQUENCE.
+  WRITE: / 'Hello, World!'.
+END-OF-SEQUENCE.
+```
+
+Save this as `hello_world.abap` and execute it to see "Hello, World!" printed on the screen.

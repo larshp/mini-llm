@@ -69,7 +69,7 @@ const models = [
   {
     id: "onnx-community/LFM2-700M-ONNX",
     released: "2025-07-10",
-    parameters: 742_489_344,
+    parameters: 742_000_000,
     expectedMemoryMb: { min: 800, max: 1_100 },
   },
   {
@@ -84,6 +84,14 @@ const models = [
     parameters: 1_000_000_000,
     expectedMemoryMb: { min: 1_150, max: 1_550 },
   },
+  /* skip this one, it fails
+  {
+    id: "shreyask/Maincoder-1B-ONNX-web",
+    released: "2025-12-30",
+    parameters: 1_000_000_000,
+    expectedMemoryMb: { min: 2_000, max: 2_700 },
+  },
+  */
   {
     id: "onnx-community/TinyLlama-1.1B-Chat-v1.0-ONNX",
     released: "2023-12-31",
@@ -120,6 +128,22 @@ const models = [
     parameters: 1_500_000_000,
     expectedMemoryMb: { min: 2_400, max: 2_950 },
   },
+  /* skip this one, it fails
+  {
+    id: "onnx-community/DeepCoder-1.5B-Preview-ONNX",
+    released: "2025-04-07",
+    parameters: 1_540_000_000,
+    expectedMemoryMb: { min: 2_500, max: 3_200 },
+  },
+  */
+  /* skip this one, it fails downloading
+  {
+    id: "onnx-community/OpenReasoning-Nemotron-1.5B-ONNX",
+    released: "2025-07-16",
+    parameters: 1_540_000_000,
+    expectedMemoryMb: { min: 2_400, max: 3_100 },
+  },
+  */
   {
     id: "onnx-community/Qwen2.5-1.5B-Instruct",
     released: "2024-09-19",
@@ -132,12 +156,14 @@ const models = [
     parameters: 1_540_000_000,
     expectedMemoryMb: { min: 2_200, max: 2_900 },
   },
+  /* skip this one, it fails
   {
     id: "onnx-community/Qwen2.5-Math-1.5B-Instruct",
     released: "2024-09-19",
     parameters: 1_540_000_000,
     expectedMemoryMb: { min: 2_200, max: 2_900 },
   },
+  */
   {
     id: "onnx-community/TinySwallow-1.5B-Instruct-ONNX",
     released: "2025-01-30",
@@ -168,6 +194,14 @@ const models = [
     parameters: 1_700_000_000,
     expectedMemoryMb: { min: 2_700, max: 3_600 },
   },
+  /* skip this one, it fails
+  {
+    id: "onnx-community/ZR1-1.5B-ONNX",
+    released: "2025-04-07",
+    parameters: 1_777_088_000,
+    expectedMemoryMb: { min: 2_500, max: 3_200 },
+  },
+  */
   {
     id: "HuggingFaceTB/SmolLM3-3B-ONNX",
     released: "2025-07-08",
